@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildSphere | Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="auth-container">
+        <section class="visual-section">
+            <img src="office.png" alt="Student project workspace">
+            <div class="image-overlay"></div>
+
+           <a href="login.html" class="logo">
+    <img src="logo.png" alt="BuildSphere Logo">
+</a>
+
+            <div class="visual-center">
+                <p>BUILD. COLLABORATE. GROW.</p>
+                <h1>Your ideas deserve<br><span>a workspace.</span></h1>
+                <p class="visual-description">
+                    Bring your academic project, team and tasks together.
+                </p>
+            </div>
+
+            <a href="about.html" class="about-link">What is BuildSphere?</a>
+        </section>
+
+        <section class="form-section">
+            <div class="form-wrapper">
+                <div class="form-heading">
+                    <p class="welcome-text">GET STARTED</p>
+                    <h2>Create your account</h2>
+                    <p>Join BuildSphere and start building.</p>
+                </div>
+
+                <form id="signupForm" novalidate>
+                    <div class="input-group">
+                        <label for="signupName">Full name</label>
+                        <input type="text" id="signupName" placeholder="Enter your full name">
+                        <span id="signupNameError" class="error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email">
+                        <span id="signupEmailError" class="error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Create a password">
+                        <span id="signupPasswordError" class="error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password">
+                        <span id="confirmPasswordError" class="error"></span>
+                    </div>
+
+                    <button type="submit" class="login-btn">Create Account <span>→</span></button>
+                </form>
+
+                <div class="signup-text">
+                    <span>Already have an account?</span>
+                    <a href="login.html">Login</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+

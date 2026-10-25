@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    color: #1c1c1c;
+    background: #d2d2d2;
+}
+
+
+/* =====================================================
+   LOGIN / SIGNUP PAGE
+   ===================================================== */
+
+.auth-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* LEFT IMAGE */
+.visual-section {
+    position: relative;
+    width: 57%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #222;
+}
+
+.visual-section img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.42),
+        rgba(0,0,0,.10) 35%,
+        rgba(0,0,0,.58)
+    );
+}
+
+/* BUILDSPHERE LOGO */
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #fff;
+    text-decoration: none;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -1.3px;
+    text-shadow: 0 2px 14px rgba(0,0,0,.45);
+}
+
+.visual-center {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -45%);
+    width: 82%;
+    text-align: center;
+    color: white;
+}
+
+.visual-center > p:first-child {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    opacity: .88;
+}
+
+.visual-center h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 4.2vw, 60px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    text-shadow: 0 3px 25px rgba(0,0,0,.35);
+}
+
+.visual-center h1 span {
+    font-style: italic;
+}
+
+.visual-description {
+    margin: 18px auto 0;
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+}
+
+.about-link {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(255,255,255,.65);
+    text-shadow: 0 2px 12px rgba(0,0,0,.5);
+    transition: .2s;
+}
+
+.about-link:hover {
+    border-color: #fff;
+    opacity: .8;
+}
+
+
+/* RIGHT FORM */
+.form-section {
+    position: relative;
+    width: 43%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px;
+    background: #d1d1d1;
+    overflow: hidden;
+}
+
+.form-section::before,
+.form-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,.18);
+}
+
+.form-section::before {
+    width: 330px;
+    height: 330px;
+    top: -150px;
+    right: -120px;
+}
+
+.form-section::after {
+    width: 250px;
+    height: 250px;
+    bottom: -130px;
+    left: -100px;
+}
+
+
+/* GLASS FORM */
+.form-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 430px;
+    padding: 42px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.20);
+    border: 1px solid rgba(255,255,255,.58);
+    backdrop-filter: blur(22px) saturate(120%);
+    -webkit-backdrop-filter: blur(22px) saturate(120%);
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.16),
+        inset 0 1px 0 rgba(255,255,255,.45);
+}
+
+.welcome-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #626262;
+    margin-bottom: 10px;
+}
+
+.form-heading h2 {
+    font-size: 29px;
+    letter-spacing: -.7px;
+    margin-bottom: 9px;
+}
+
+.form-heading > p:last-child {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.label-row label {
+    margin: 0;
+}
+
+.forgot {
+    font-size: 11px;
+    color: #555;
+    text-decoration: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+.input-group input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(60,60,60,.25);
+    outline: none;
+    background: rgba(255,255,255,.47);
+    color: #222;
+    font-family: inherit;
+    font-size: 14px;
+    transition: .25s;
+}
+
+.input-group input::placeholder {
+    color: #888;
+}
+
+.input-group input:focus {
+    background: rgba(255,255,255,.72);
+    border-color: #444;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.06);
+}
+
+.error {
+    display: block;
+    min-height: 15px;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #a51d16;
+}
+
+.login-btn {
+    width: 100%;
+    height: 51px;
+    border: none;
+    border-radius: 10px;
+    background: #1d1d1d;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: .25s;
+}
+
+.login-btn span {
+    font-size: 18px;
+    transition: .25s;
+}
+
+.login-btn:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+.login-btn:hover span {
+    transform: translateX(4px);
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 12px;
+    color: #666;
+}
+
+.signup-text a {
+    margin-left: 5px;
+    color: #222;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   BUILDSPHERE ABOUT PAGE
+   ===================================================== */
+
+/* IMPORTANT:
+   Old .about-page flex styling removed.
+   About page now behaves like a normal scrolling webpage.
+*/
+
+.about-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background: #f3f3f1;
+    color: #202020;
+}
+
+.about-page a {
+    font-weight: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =====================================================
+   ABOUT NAVBAR
+   ===================================================== */
+
+.about-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(243, 243, 241, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    z-index: 1000;
+}
+
+.about-logo {
+    text-decoration: none !important;
+    color: #202020 !important;
+    font-size: 24px;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none !important;
+    color: #555 !important;
+    font-size: 13px;
+    font-weight: 500 !important;
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #111 !important;
+}
+
+.nav-links .nav-login {
+    background: #242424;
+    color: white !important;
+    padding: 11px 18px;
+    border-radius: 7px;
+}
+
+.nav-links .nav-login:hover {
+    background: #111;
+    color: white !important;
+}
+
+.nav-login span {
+    margin-left: 7px;
+}
+
+
+/* =====================================================
+   COMMON ABOUT SECTION
+   ===================================================== */
+
+.about-section {
+    min-height: 100vh;
+    padding: 120px 8% 90px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero-section {
+    background:
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(255, 255, 255, 0.9),
+            transparent 35%
+        ),
+        #e9e9e6;
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    font-weight: 600;
+}
+
+.hero-content h1 span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    background: #242424;
+    color: white !important;
+
+    text-decoration: none !important;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 500 !important;
+
+    transition: 0.25s ease;
+}
+
+.explore-btn:hover {
+    background: #111;
+    transform: translateY(-2px);
+}
+
+.explore-btn span {
+    font-size: 16px;
+}
+
+.scroll-text {
+    position: absolute;
+    bottom: 35px;
+    left: 8%;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+
+/* =====================================================
+   PROBLEM SECTION
+   ===================================================== */
+
+.problem-section {
+    background: #242424;
+    color: white;
+}
+
+.problem-section .section-label {
+    color: #999;
+}
+
+.section-heading {
+    max-width: 820px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: clamp(38px, 5vw, 67px);
+    line-height: 1.02;
+    letter-spacing: -2px;
+    font-weight: 600;
+}
+
+.section-heading h2 span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.section-heading > p:last-child {
+    max-width: 650px;
+    margin-top: 23px;
+
+    color: #999;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+
+    margin-top: 50px;
+}
+
+.problem-card {
+    min-height: 200px;
+    padding: 23px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.045);
+
+    transition: 0.25s ease;
+}
+
+.problem-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+}
+
+.problem-card > span {
+    color: #888;
+    font-size: 11px;
+}
+
+.problem-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.problem-card p {
+    margin: 0;
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.problem-solution {
+    margin-top: 45px;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.problem-solution p {
+    margin: 0 0 8px;
+
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.problem-solution h3 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   FEATURES
+   ===================================================== */
+
+.features-section {
+    background: #f3f3f1;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.centered > p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    margin-top: 55px;
+}
+
+.feature-card {
+    min-height: 190px;
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.035);
+
+    transition: 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+}
+
+.feature-card > span {
+    color: #999;
+    font-size: 11px;
+}
+
+.feature-card h3 {
+    margin: 38px 0 9px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    margin: 0;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+   ===================================================== */
+
+.how-section {
+    background: #e9e9e6;
+}
+
+.steps {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 55px auto 0;
+
+    border-top: 1px solid #ccc;
+}
+
+.step {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+
+    padding: 27px 0;
+
+    border-bottom: 1px solid #ccc;
+}
+
+.step-number {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.step-content h3 {
+    margin: 0 0 7px;
+
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.step-content p {
+    margin: 0;
+
+    max-width: 600px;
+
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FINAL CTA
+   ===================================================== */
+
+.final-cta {
+    margin: 80px auto 0;
+    text-align: center;
+}
+
+.final-cta > p {
+    margin-bottom: 15px;
+
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.final-cta h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: -2px;
+    font-weight: 600;
+}
+
+.final-cta h2 span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   RESPONSIVE - ABOUT PAGE
+   ===================================================== */
+
+@media (max-width: 1100px) {
+
+    .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .visual-section {
+        width: 100%;
+        min-height: 58vh;
+        height: 58vh;
+    }
+
+    .form-section {
+        width: 100%;
+        min-height: 42vh;
+        padding: 45px 25px;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .about-navbar {
+        height: 68px;
+        padding: 0 22px;
+    }
+
+    .about-logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a:not(.nav-login) {
+        display: none;
+    }
+
+    .about-section {
+        padding: 105px 25px 70px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-card {
+        min-height: 170px;
+    }
+
+    .step {
+        grid-template-columns: 55px 1fr;
+        gap: 10px;
+    }
+
+    .step-content h3 {
+        font-size: 19px;
+    }
+
+    .final-cta {
+        margin-top: 60px;
+    }
+
+    .logo {
+        top: 24px;
+        font-size: 29px;
+    }
+
+    .visual-center h1 {
+        font-size: 36px;
+    }
+
+    .visual-description {
+        font-size: 13px;
+    }
+
+    .form-wrapper {
+        padding: 30px 24px;
+    }
+
+}

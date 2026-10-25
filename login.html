@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildSphere | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="auth-container">
+        <section class="visual-section">
+            <img src="office.png" alt="Student project workspace">
+            <div class="image-overlay"></div>
+
+            <a href="login.html" class="logo">BuildSphere</a>
+
+            <div class="visual-center">
+                <p>YOUR PROJECT. YOUR SPACE.</p>
+                <h1>Turn ideas into<br><span>something real.</span></h1>
+                <p class="visual-description">
+                    Plan, collaborate and manage your academic projects in one place.
+                </p>
+            </div>
+
+            <a href="about.html" class="about-link">What is BuildSphere?</a>
+        </section>
+
+        <section class="form-section">
+            <div class="form-wrapper">
+                <div class="form-heading">
+                    <p class="welcome-text">WELCOME BACK</p>
+                    <h2>Login to BuildSphere</h2>
+                    <p>Continue working on your projects.</p>
+                </div>
+
+                <form id="loginForm" novalidate>
+                    <div class="input-group">
+                        <label for="loginEmail">Email address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email">
+                        <span id="loginEmailError" class="error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label for="loginPassword">Password</label>
+
+                        </div>
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
+                        <span id="loginPasswordError" class="error"></span>
+                    </div>
+
+                    <button type="submit" class="login-btn">Login <span>→</span></button>
+                </form>
+
+                <div class="signup-text">
+                    <span>Don't have an account?</span>
+                    <a href="signup.html">Create an account</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
