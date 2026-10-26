@@ -11,8 +11,13 @@ export default function SettingsPage({
   members = [],
   files = [],
 }) {
-  const [name, setName] = useState('Gunika Sethi');
-  const [email, setEmail] = useState('gunika@example.com');
+  const [name, setName] = useState(
+  () => localStorage.getItem('buildsphere_name') || ''
+);
+
+const [email, setEmail] = useState(
+  () => localStorage.getItem('buildsphere_email') || ''
+);
   const [saved, setSaved] = useState(false);
 
   return (
@@ -37,14 +42,38 @@ export default function SettingsPage({
             </div>
           </div>
 
-          <form
-            className="settings-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSaved(true);
-              setTimeout(() => setSaved(false), 2500);
-            }}
-          >
+          
+<form
+  className="settings-form"
+  onSubmit={(e) => {
+    e.preventDefault();
+
+    const oldEmail = localStorage.getItem('buildsphere_email') || '';
+    const updatedName = name.trim();
+    const updatedEmail = email.trim().toLowerCase();
+
+    localStorage.setItem('buildsphere_name', updatedName);
+    localStorage.setItem('buildsphere_email', updatedEmail);
+
+    const users = JSON.parse(
+      localStorage.getItem('buildsphere_users') || '[]'
+    );
+
+    const updatedUsers = users.map((user) =>
+      user.email.toLowerCase() === oldEmail.toLowerCase()
+        ? { ...user, name: updatedName, email: updatedEmail }
+        : user
+    );
+
+    localStorage.setItem('buildsphere_users', JSON.stringify(updatedUsers));
+
+    setName(updatedName);
+    setEmail(updatedEmail);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2500);
+  }}
+>
+
             <label className="field">
               <span>Display name</span>
               <input
